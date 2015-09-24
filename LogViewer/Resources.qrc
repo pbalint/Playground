@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/resources">
-        <file>icons/log.png</file>
-        <file>icons/filter.png</file>
-        <file>icons/logviewer.png</file>
-    </qresource>
-</RCC>
