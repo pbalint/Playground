@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Windows">
+      <UniqueIdentifier>{e005d4a5-30e2-4080-901d-068c44f9b914}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HW">
+      <UniqueIdentifier>{b5ba7236-616b-4e4f-bb4c-764700da9673}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd Party">
+      <UniqueIdentifier>{0093074b-9212-4eeb-ae0c-3a2442b0113f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="3rd Party\NVApi">
+      <UniqueIdentifier>{93bff49f-cc36-4d97-b8d4-4c5a685f5952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Windows\UI">
+      <UniqueIdentifier>{56f2d389-8348-4df6-ab63-94e0a49bac77}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Buffer.cpp" />
+    <ClCompile Include="String.cpp" />
+    <ClCompile Include="Port.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceControlManager.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Winbond83627DHG.cpp">
+      <Filter>HW</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Button.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\ComboBox.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Label.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\ListBox.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\ScrollBar.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\TextBox.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Window.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="UI\Input.cpp">
+      <Filter>Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Control.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Image.cpp" />
+    <ClCompile Include="ImageHelper.cpp" />
+    <ClCompile Include="UI\Icon.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Font.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="External\lodepng.cpp">
+      <Filter>3rd Party</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\TrayIcon.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\WindowLowLevel.cpp">
+      <Filter>Windows\UI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Buffer.h" />
+    <ClInclude Include="List.h" />
+    <ClInclude Include="RefCountedPtr.h" />
+    <ClInclude Include="String.h" />
+    <ClInclude Include="Port.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceControlManager.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Winbond83627DHG.h">
+      <Filter>HW</Filter>
+    </ClInclude>
+    <ClInclude Include="NVApi\nvapi.h">
+      <Filter>3rd Party\NVApi</Filter>
+    </ClInclude>
+    <ClInclude Include="Array.h" />
+    <ClInclude Include="Thread.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Button.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\ComboBox.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Label.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\ListBox.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\ScrollBar.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\TextBox.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Window.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="UI\Input.h">
+      <Filter>Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Control.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Image.h" />
+    <ClInclude Include="BMPHeader.h" />
+    <ClInclude Include="ImageHelper.h" />
+    <ClInclude Include="UI\Icon.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\Font.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="External\lodepng.h">
+      <Filter>3rd Party</Filter>
+    </ClInclude>
+    <ClInclude Include="UI\TrayIcon.h">
+      <Filter>Windows\UI</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

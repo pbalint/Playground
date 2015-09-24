@@ -1,0 +1,25 @@
+[Version]
+signature = "$Windows NT$"
+
+[SourceDisksNames]
+1 = "BDrv Driver"
+
+[SourceDisksFiles]
+BDrv.sys = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+[DefaultInstall.NT]
+CopyFiles = @BDrv.sys
+ 
+[DefaultInstall.NT.Services]
+AddService = BDrv, ,BDrv_service_install_section
+
+[BDrv_service_install_section]
+DisplayName    = "BDrv"
+Description    = "Provides port io for user space programs"
+ServiceType    = 1
+StartType      = 1
+ErrorControl   = 0
+ServiceBinary  = %12%\BDrv.sys

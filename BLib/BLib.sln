@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BLib", "BLib\BLib.vcxproj", "{D41F2DBD-F2F3-4F73-8AE5-82F2B4A91048}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BLib_test", "BLib_test\BLib_test.vcxproj", "{E5391459-BA42-4155-8C95-0F2F900BBC5C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D41F2DBD-F2F3-4F73-8AE5-82F2B4A91048} = {D41F2DBD-F2F3-4F73-8AE5-82F2B4A91048}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FanControl", "FanControl\FanControl.vcxproj", "{AE7B0691-F3B6-43E8-8B26-923006E38424}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D41F2DBD-F2F3-4F73-8AE5-82F2B4A91048} = {D41F2DBD-F2F3-4F73-8AE5-82F2B4A91048}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D41F2DBD-F2F3-4F73-8AE5-82F2B4A91048}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D41F2DBD-F2F3-4F73-8AE5-82F2B4A91048}.Debug|Win32.Build.0 = Debug|Win32
+		{D41F2DBD-F2F3-4F73-8AE5-82F2B4A91048}.Release|Win32.ActiveCfg = Release|Win32
+		{D41F2DBD-F2F3-4F73-8AE5-82F2B4A91048}.Release|Win32.Build.0 = Release|Win32
+		{E5391459-BA42-4155-8C95-0F2F900BBC5C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E5391459-BA42-4155-8C95-0F2F900BBC5C}.Debug|Win32.Build.0 = Debug|Win32
+		{E5391459-BA42-4155-8C95-0F2F900BBC5C}.Release|Win32.ActiveCfg = Release|Win32
+		{E5391459-BA42-4155-8C95-0F2F900BBC5C}.Release|Win32.Build.0 = Release|Win32
+		{AE7B0691-F3B6-43E8-8B26-923006E38424}.Debug|Win32.ActiveCfg = Debug|Win32
+		{AE7B0691-F3B6-43E8-8B26-923006E38424}.Debug|Win32.Build.0 = Debug|Win32
+		{AE7B0691-F3B6-43E8-8B26-923006E38424}.Release|Win32.ActiveCfg = Release|Win32
+		{AE7B0691-F3B6-43E8-8B26-923006E38424}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
