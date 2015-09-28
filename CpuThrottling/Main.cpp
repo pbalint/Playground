@@ -1,12 +1,17 @@
 #include <Windows.h>
 #include <PowrProf.h>
 #include <stdio.h>
-#include <tchar.h>
 
 int main( int argc, const char* argv )
 {
     GUID* active_power_scheme;
-    PowerGetActiveScheme( NULL, &active_power_scheme );
+    HRESULT return_value = PowerGetActiveScheme( NULL, &active_power_scheme );
+    if ( return_value != 0 )
+    {
+        printf( "Error getting active power scheme! (%i)\n", return_value );
+        return -1;
+    }
+
     DWORD old_ac_throttle_min;
     DWORD old_dc_throttle_min;
     DWORD old_ac_throttle_max;
