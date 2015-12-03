@@ -25,6 +25,7 @@ int main( int argc, const char* argv )
     PowerWriteACValueIndex( NULL, active_power_scheme, &GUID_PROCESSOR_SETTINGS_SUBGROUP, &GUID_PROCESSOR_THROTTLE_MAXIMUM, 0 );
     PowerWriteDCValueIndex( NULL, active_power_scheme, &GUID_PROCESSOR_SETTINGS_SUBGROUP, &GUID_PROCESSOR_THROTTLE_MINIMUM, 0 );
     PowerWriteDCValueIndex( NULL, active_power_scheme, &GUID_PROCESSOR_SETTINGS_SUBGROUP, &GUID_PROCESSOR_THROTTLE_MAXIMUM, 0 );
+    PowerSetActiveScheme( NULL, active_power_scheme );
 
     system( "pause" );
 
@@ -32,6 +33,7 @@ int main( int argc, const char* argv )
     PowerWriteACValueIndex( NULL, active_power_scheme, &GUID_PROCESSOR_SETTINGS_SUBGROUP, &GUID_PROCESSOR_THROTTLE_MAXIMUM, old_ac_throttle_max );
     PowerWriteDCValueIndex( NULL, active_power_scheme, &GUID_PROCESSOR_SETTINGS_SUBGROUP, &GUID_PROCESSOR_THROTTLE_MINIMUM, old_dc_throttle_min );
     PowerWriteDCValueIndex( NULL, active_power_scheme, &GUID_PROCESSOR_SETTINGS_SUBGROUP, &GUID_PROCESSOR_THROTTLE_MAXIMUM, old_dc_throttle_max );
+    PowerSetActiveScheme( NULL, active_power_scheme );
 
     LocalFree( active_power_scheme );
     return 0;
