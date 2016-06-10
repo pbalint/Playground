@@ -4,7 +4,9 @@ My various hobby projects
 <strong>BLib</strong>: Small C++ library, to help me not forget C++ (There is also a sample app, for controlling the fans on my old pc)<BR/>
 <strong>CpuThrottling</strong>: Windows application to keep the cpu throttled to minimum (changes current power plan setting)<BR/>
 <strong>DirectShowCapture</strong>: C# and C++ program to capture frames from a USB webcam<BR/>
+<strong>Extplorer</strong>: My thesis: C# program for reading Ext 2/3/4 MBR filesystems on windows<BR/>
 <strong>HTTPStressTest</strong>: C# program to repeatedly issue http requests (Once upon a time, a client had an unknown number of broken servers behind a load balancer...)<BR/>
+<strong>InputPlayback</strong>: C# program for playing back keyboard/mouse input<BR/>
 <strong>JLogviewer</strong>: Abandoned log viewer in java for a logfile with custom format (grouping logs from multiple threads)<BR/>
 <strong>PMCFiller</strong>: Automatically fills EPAM timesheet (from 2011) :-)<BR/>
 <strong>Steam</strong>: Lists steam api endpoints<BR/>
