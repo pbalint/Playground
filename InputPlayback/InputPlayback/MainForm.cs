@@ -43,6 +43,7 @@ namespace InputPlayback
             if (dialog.ShowDialog() == DialogResult.OK)
             {
                 Utils.DeserializeActions<List<Actions.Action>>(ref actions, dialog.FileName);
+                worker.Actions = actions;
                 listViewSteps.Items.Clear();
                 for (int i = 0; i < actions.Count; i++)
                 {
@@ -178,6 +179,14 @@ namespace InputPlayback
             }
 
             panelActionParameters.buildControlsForAction(actions[listViewSteps.SelectedIndices[0]]);
+            for (int i = 0; i < comboBoxAction.Items.Count; i++)
+            {
+                if (listViewSteps.SelectedItems[0].SubItems[1].Text.StartsWith(comboBoxAction.Items[i].ToString()))
+                {
+                    comboBoxAction.SelectedIndex = i;
+                    break;
+                }
+            }
         }
     }
 }
