@@ -10,7 +10,12 @@ namespace InputPlayback.Actions
         [Parameter("Button", 1)]
         private MouseButtons? button;
 
+        [Parameter("DoubleClick", 2)]
+        private bool? doubleClick;
+
         public MouseButtons? Button { get { return button; } set { button = value; } }
+
+        public bool? DoubleClick { get { return doubleClick; } set { doubleClick = value; } }
 
         override
         public void Invoke(Worker.State state)
@@ -50,6 +55,10 @@ namespace InputPlayback.Actions
                     break;
             }
             NativeMethods.SendInput(2, queue, Marshal.SizeOf(typeof(INPUT)));
+            if ( doubleClick?? false )
+            {
+                NativeMethods.SendInput( 2, queue, Marshal.SizeOf( typeof( INPUT ) ) );
+            }
         }
     }
 }

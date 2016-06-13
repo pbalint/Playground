@@ -54,6 +54,7 @@
     <Compile Include="Actions\TypeText.cs" />
     <Compile Include="Input\Native\DataStructures\CURSORINFO.cs" />
     <Compile Include="Input\Native\DataStructures\POINT.cs" />
+    <Compile Include="Input\Native\DataStructures\MapVirtualKeyMapTypes.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

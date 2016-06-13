@@ -23,9 +23,9 @@ namespace InputPlayback
             {
                 type = type.GetGenericArguments()[0];
             }
-            if (type.IsPrimitive)
+            if ( type == typeof( bool ) )
             {
-                control = BuildTextBox(value);
+                control = BuildCheckBox(value);
             }
             else if (type.IsEnum)
             {
@@ -38,10 +38,19 @@ namespace InputPlayback
             return control;
         }
 
-        private Control BuildTextBox(object value)
+        private Control BuildCheckBox( object value )
         {
-            Control control = new TextBox();
-            //control.Dock = DockStyle.Fill;
+            CheckBox control = new CheckBox();
+            if ( value != null )
+            {
+                control.Checked = (bool)value;
+            }
+            return control;
+        }
+
+        private Control BuildTextBox( object value )
+        {
+            TextBox control = new TextBox();
             if (value != null)
             {
                 control.Text = value.ToString();
@@ -111,7 +120,16 @@ namespace InputPlayback
             Dictionary<string, object> parameters = new Dictionary<string, object>();
             foreach (Tuple<string, Control> entry in controlsForParameters)
             {
-                parameters.Add( entry.Item1, entry.Item2.Text );
+                object value;
+                if (entry.Item2 is CheckBox)
+                {
+                    value = ( (CheckBox)entry.Item2 ).Checked;
+                }
+                else
+                {
+                    value = entry.Item2.Text;
+                }
+                parameters.Add( entry.Item1, value );
             }
             Actions.Action action = (Actions.Action)Activator.CreateInstance( actionType );
             action.SetParameters( parameters );

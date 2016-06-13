@@ -10,7 +10,12 @@ namespace InputPlayback.Actions
         [Parameter("Key", 1)]
         private VirtualKeyCode? keyCode;
 
+        [Parameter("ScanCode", 2)]
+        private bool? scanCode;
+
         public VirtualKeyCode? KeyCode { get { return keyCode; } set { keyCode = value; } }
+
+        public bool? ScanCode { get { return scanCode; } set { scanCode = value; } }
 
         override
         public void Invoke(Worker.State state)
@@ -22,7 +27,11 @@ namespace InputPlayback.Actions
             queue[0].u.Keyboard.KeyCode = keyCode?? VirtualKeyCode.SPACE;
             queue[0].u.Keyboard.ExtraInfo = IntPtr.Zero;
 
-            uint ret = NativeMethods.SendInput(1, queue, Marshal.SizeOf(typeof(INPUT)));
+            if ( scanCode ?? false )
+            {
+                Utils.VkToScan( queue[ 0 ].u.Keyboard );
+            }
+            NativeMethods.SendInput(1, queue, Marshal.SizeOf(typeof(INPUT)));
         }
     }
 }

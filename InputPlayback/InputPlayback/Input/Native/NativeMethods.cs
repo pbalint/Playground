@@ -17,5 +17,11 @@ namespace InputPlayback.Input.Native
 
         [DllImport("user32.dll")]
         public static extern bool GetCursorInfo(out CURSORINFO pci);
+
+        [DllImport( "user32.dll" )]
+        public static extern uint MapVirtualKey( uint uCode, MapVirtualKeyMapTypes uMapType );
+
+        [DllImport( "user32.dll" )]
+        public static extern uint MapVirtualKeyEx( uint uCode, MapVirtualKeyMapTypes uMapType, IntPtr dwhkl );
     }
 }

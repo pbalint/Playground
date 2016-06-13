@@ -77,5 +77,12 @@ namespace InputPlayback
             keyboard.Flags = KeyboardFlag.Unicode;
             return keyboard;
         }
+
+        public static void VkToScan(KEYBDINPUT input)
+        {
+            input.Flags |= KeyboardFlag.ScanCode;
+            input.Scan = (ushort)NativeMethods.MapVirtualKey( (uint)input.KeyCode, MapVirtualKeyMapTypes.MAPVK_VK_TO_VSC );
+            input.KeyCode = 0;
+        }
     }
 }
