@@ -9,6 +9,7 @@ namespace InputPlayback
 {
     public partial class MainForm : Form
     {
+        private bool dont_run_event_handler = false;
         private List<Actions.Action> actions = new List<Actions.Action>();
         private Worker worker = new Worker();
 
@@ -47,22 +48,9 @@ namespace InputPlayback
                 listViewSteps.Items.Clear();
                 for (int i = 0; i < actions.Count; i++)
                 {
-                    listViewSteps.Items.Add(createListViewItemFromAction(i, actions[i]));
+                    listViewSteps.Items.Add(new ActionItem(i, actions[i]));
                 }
             }
-        }
-
-        private ListViewItem createListViewItemFromAction(int index, Actions.Action action)
-        {
-            ListViewItem item = new ListViewItem(index.ToString());
-            item.SubItems.Add(action.ToString());
-            StringBuilder parametersBuilder= new StringBuilder();
-            foreach (ParameterContainer parameter in action.GetParameters())
-            {
-                parametersBuilder.Append(parameter.Name).Append(": ").Append(parameter.Value).Append(" ");
-            }
-            item.SubItems.Add(parametersBuilder.ToString());
-            return item;
         }
 
         private void menuItemSave_Click(object sender, EventArgs e)
@@ -99,7 +87,8 @@ namespace InputPlayback
 
         private void comboBoxAction_SelectedValueChanged(object sender, EventArgs e)
         {
-            panelActionParameters.buildControlsForAction((Actions.Action)comboBoxAction.SelectedItem);
+            if ( dont_run_event_handler ) return;
+            panelActionParameters.buildControlsForAction( (Actions.Action)comboBoxAction.SelectedItem );
         }
 
         private void buttonPlay_Click( object sender, EventArgs e )
@@ -119,7 +108,7 @@ namespace InputPlayback
         {
             Actions.Action action = panelActionParameters.GetActionFromParameters();
             actions.Add( action );
-            listViewSteps.Items.Add(createListViewItemFromAction(listViewSteps.Items.Count, action));
+            listViewSteps.Items.Add(new ActionItem(listViewSteps.Items.Count, action));
         }
 
         private void buttonUpdate_Click( object sender, EventArgs e )
@@ -127,7 +116,7 @@ namespace InputPlayback
             Actions.Action action = panelActionParameters.GetActionFromParameters();
             int index = listViewSteps.SelectedIndices[0];
             actions[index] = action;
-            listViewSteps.Items[index] = createListViewItemFromAction(index, action);
+            listViewSteps.Items[index] = new ActionItem(index, action);
             listViewSteps.Items[index].Focused = true;
             listViewSteps.Items[index].Selected = true;
         }
@@ -179,6 +168,7 @@ namespace InputPlayback
             }
 
             panelActionParameters.buildControlsForAction(actions[listViewSteps.SelectedIndices[0]]);
+            dont_run_event_handler = true;
             for (int i = 0; i < comboBoxAction.Items.Count; i++)
             {
                 if (listViewSteps.SelectedItems[0].SubItems[1].Text.StartsWith(comboBoxAction.Items[i].ToString()))
@@ -186,6 +176,15 @@ namespace InputPlayback
                     comboBoxAction.SelectedIndex = i;
                     break;
                 }
+            }
+            dont_run_event_handler = false;
+        }
+
+        private void MainForm_Activated( object sender, EventArgs e )
+        {
+            if (stopWhenRefocusedToolStripMenuItem.Checked && worker.IsBusy)
+            {
+                buttonPlay.PerformClick();
             }
         }
     }

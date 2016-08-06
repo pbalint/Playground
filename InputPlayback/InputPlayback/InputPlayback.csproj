@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionItem.cs" />
     <Compile Include="Actions\Goto.cs" />
     <Compile Include="Actions\KeyClick.cs" />
     <Compile Include="Actions\KeyDown.cs" />

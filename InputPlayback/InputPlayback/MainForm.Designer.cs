@@ -47,6 +47,7 @@
             this.columnHeaderIndex = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderActon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderParameters = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.stopWhenRefocusedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tlpControls.SuspendLayout();
             this.menuStripMenu.SuspendLayout();
             this.SuspendLayout();
@@ -124,7 +125,7 @@
             this.menuItemSave,
             this.menuItemExit});
             this.menuFile.Name = "menuFile";
-            this.menuFile.Size = new System.Drawing.Size(35, 20);
+            this.menuFile.Size = new System.Drawing.Size(37, 20);
             this.menuFile.Text = "&File";
             // 
             // menuItemOpen
@@ -133,7 +134,7 @@
             this.menuItemOpen.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.menuItemOpen.Name = "menuItemOpen";
             this.menuItemOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.menuItemOpen.Size = new System.Drawing.Size(140, 22);
+            this.menuItemOpen.Size = new System.Drawing.Size(146, 22);
             this.menuItemOpen.Text = "&Open";
             this.menuItemOpen.Click += new System.EventHandler(this.menuItemOpen_Click);
             // 
@@ -143,29 +144,30 @@
             this.menuItemSave.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.menuItemSave.Name = "menuItemSave";
             this.menuItemSave.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.menuItemSave.Size = new System.Drawing.Size(140, 22);
+            this.menuItemSave.Size = new System.Drawing.Size(146, 22);
             this.menuItemSave.Text = "&Save";
             this.menuItemSave.Click += new System.EventHandler(this.menuItemSave_Click);
             // 
             // menuItemExit
             // 
             this.menuItemExit.Name = "menuItemExit";
-            this.menuItemExit.Size = new System.Drawing.Size(140, 22);
+            this.menuItemExit.Size = new System.Drawing.Size(146, 22);
             this.menuItemExit.Text = "E&xit";
             this.menuItemExit.Click += new System.EventHandler(this.menuItemExit_Click);
             // 
             // toolsToolStripMenuItem
             // 
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mouseTrackerToolStripMenuItem});
+            this.mouseTrackerToolStripMenuItem,
+            this.stopWhenRefocusedToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // mouseTrackerToolStripMenuItem
             // 
             this.mouseTrackerToolStripMenuItem.Name = "mouseTrackerToolStripMenuItem";
-            this.mouseTrackerToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.mouseTrackerToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.mouseTrackerToolStripMenuItem.Text = "&Mouse tracker";
             this.mouseTrackerToolStripMenuItem.Click += new System.EventHandler(this.mouseTrackerToolStripMenuItem_Click);
             // 
@@ -252,6 +254,13 @@
             this.columnHeaderParameters.Text = "Parameters";
             this.columnHeaderParameters.Width = 250;
             // 
+            // stopWhenRefocusedToolStripMenuItem
+            // 
+            this.stopWhenRefocusedToolStripMenuItem.CheckOnClick = true;
+            this.stopWhenRefocusedToolStripMenuItem.Name = "stopWhenRefocusedToolStripMenuItem";
+            this.stopWhenRefocusedToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
+            this.stopWhenRefocusedToolStripMenuItem.Text = "Stop when refocused";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -260,6 +269,7 @@
             this.Controls.Add(this.tlpControls);
             this.Name = "MainForm";
             this.Text = "Input Playback";
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.tlpControls.ResumeLayout(false);
             this.tlpControls.PerformLayout();
             this.menuStripMenu.ResumeLayout(false);
@@ -288,6 +298,7 @@
         private System.Windows.Forms.ColumnHeader columnHeaderIndex;
         private System.Windows.Forms.ColumnHeader columnHeaderActon;
         private System.Windows.Forms.ColumnHeader columnHeaderParameters;
+        private System.Windows.Forms.ToolStripMenuItem stopWhenRefocusedToolStripMenuItem;
     }
 }
 
