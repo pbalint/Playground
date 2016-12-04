@@ -1,0 +1,7 @@
+package messages;
+
+message Reading {
+    required int64    time        = 1;
+    required int32    temperature = 2;
+}
+
