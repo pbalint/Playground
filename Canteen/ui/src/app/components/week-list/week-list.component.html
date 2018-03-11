@@ -1,0 +1,6 @@
+<a *ngFor='let week of weeks' class='weekEntry' (click)='weekClicked(week)' routerLink='/weeks/{{week.weekNumber}}'>
+    <div>
+        <div>Week - {{week.weekNumber}}</div>
+        <div>{{week.start}} - {{week.end}}</div>
+    </div>
+</a>

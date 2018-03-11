@@ -1,0 +1,42 @@
+:host {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+#componentContainer {
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+}
+
+#weekContainer {
+	display: flex;
+	flex-flow: row;
+	height: 100%;
+	
+}
+
+#weekDetailContainer {
+    margin-left: 8px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    float: right;
+    overflow: auto;
+}
+
+app-menubar {
+	width: 100%;
+	height: 40px;
+	display: block;
+}
+
+app-week-list {
+	width: 200px;
+	height: 100%;
+	display: block;
+	float: left;
+	overflow: auto;
+	background-color: rgb(10,10,10)
+}

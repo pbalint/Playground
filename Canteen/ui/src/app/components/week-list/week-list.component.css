@@ -1,0 +1,16 @@
+.weekEntry {
+	text-align: center;
+	text-decoration: none;
+	color: white;
+	padding: 8px;
+	border: 1px;
+	border-color: rgb(120,120,120);
+	border-style: solid;
+	display: block;
+}
+
+.weekEntry:HOVER {
+	/*text-decoration: underline;*/
+	background-color: gray;
+	cursor: pointer;
+}

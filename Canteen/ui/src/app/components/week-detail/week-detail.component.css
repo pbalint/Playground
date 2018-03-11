@@ -1,0 +1,35 @@
+.dailyMenuContainer {
+	display: flex;
+	flex-flow: row;
+	height: 100%;
+	display: clear;
+}
+
+.dailyMenuHeader {
+	font-size: large;
+}
+
+.dailyMenu {
+	margin: 20px;
+    display: flex;
+    flex-flow: column;
+}
+
+.dish {
+    margin: 20px;
+    display: flex;
+    flex-flow: row;
+}
+
+.dishName {
+	margin-left: 10px;
+}
+
+.dishPrice {
+    margin-left: 10px;
+}
+
+.dishPicture {
+	width: 128px;
+	height: 100%;
+}

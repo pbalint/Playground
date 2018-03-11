@@ -1,0 +1,19 @@
+<p>Week {{weekNumber}}</p>
+<div *ngIf='menu'>
+    {{menu.weekNumber}}
+    <div class='dailyMenuContainer'>
+        <div class='dailyMenu' *ngFor='let dayMenu of menu.dayMenus'>
+            <div class='dailyMenuHeader'>{{dayMenu.date}}</div>
+            <div class='dailyMenuDishContainer'>
+                <div *ngFor='let dishEntry of dayMenu.dishes | dishEntries'>
+                    Dish type: {{dishEntry.key}}
+                    <div class='dish' *ngFor='let dish of dishEntry.value'>
+                        <div class='dishName'>{{dish.name}}</div>
+                        <div class='dishPrice'>{{dish.price}} Ft.-</div>
+                        <img class='dishPicture' src="{{dish.imageUrl}}">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
