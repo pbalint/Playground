@@ -1,0 +1,57 @@
+.dailyMenuContainer {
+	height: 100%;
+}
+
+.dailyMenuHeader {
+    font-size: large;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.dishTypeContainer {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dishType {
+    display: inline;
+    background-color: rgb(80, 80, 80);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.dish {
+    padding: 4px;
+    display: flex;
+    flex-flow: row;
+}
+
+.dish:HOVER {
+    background-color: gray;
+    cursor: pointer;
+}
+
+.dishControls {
+    display: none;
+    position: absolute;
+    background: none;
+    z-index: 1;
+    align-self: flex-end;
+}
+
+.dish:HOVER .dishControls {
+	display: block;
+}
+
+.dishName {
+}
+
+.dishPrice {
+    margin-left: 10px;
+}
+
+.dishPicture {
+    width: 128px;
+    height: 100%;
+}

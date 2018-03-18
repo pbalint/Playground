@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Cookie } from 'ng2-cookies/ng2-cookies';
+// import { Cookie } from 'ng2-cookies/ng2-cookies';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +10,4 @@ export class AppComponent {
   title = 'Canteen';
 }
 
-Cookie.set('key', 'value');
+// Cookie.set('key', 'value');

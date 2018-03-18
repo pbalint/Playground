@@ -9,16 +9,16 @@ import { ActivatedRoute } from '@angular/router';
     styleUrls: [ './week-detail.component.css' ]
 } )
 export class WeekDetailComponent implements OnInit {
-    weekNumber: number;
     menu: WeekMenu;
 
     constructor( private menuService: MenuService, private route: ActivatedRoute ) { }
 
     ngOnInit() {
         this.route.params.subscribe( params => {
+            const yearNumber: number = parseInt( params[ 'year' ], 10 );
             const weekNumber: number = parseInt( params[ 'weekNumber' ], 10 );
-            if ( !Number.isNaN( weekNumber ) ) {
-                this.displayMenuForWeek( weekNumber );
+            if ( !Number.isNaN( yearNumber ) && !Number.isNaN( weekNumber ) ) {
+                this.displayMenuForWeek( yearNumber, weekNumber );
             }
             else {
                 this.displayMenuForCurrentWeek();
@@ -26,18 +26,15 @@ export class WeekDetailComponent implements OnInit {
         } );
     }
 
-    private displayMenuForWeek( weekNumber: number ): void {
-        this.weekNumber = weekNumber;
-        this.menuService.getMenuForWeek( weekNumber ).subscribe( menu => {
+    private displayMenuForWeek( yearNumber: number, weekNumber: number ): void {
+        this.menuService.getMenuForWeek( yearNumber, weekNumber ).subscribe( menu => {
             this.menu = menu;
         } );
     }
 
     private displayMenuForCurrentWeek(): void {
-        this.weekNumber = -1;
-        this.menuService.getMenuForWeek( this.weekNumber ).subscribe( menu => {
+        this.menuService.getMenuForWeek( 2018, 5 ).subscribe( menu => {
             this.menu = menu;
         } );
     }
-
 }

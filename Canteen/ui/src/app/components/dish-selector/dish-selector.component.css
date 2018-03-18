@@ -1,0 +1,73 @@
+.componentContainer {
+	display: flex;
+	flex-direction: column;
+	width: 300px;
+	height: 100%;
+}
+
+.controls {
+	display: flex;
+	flex-direction: column;
+	flex-order: row;
+}
+
+.buttonContainer {
+	display: flex;
+	height: 50px;
+	flex-direction: row;
+	margin-bottom: 4px;
+}
+
+.spacer {
+	width: 100%;
+}
+
+.dishList {
+	overflow: auto;
+	height: 100%;
+	margin-right: 2px;
+}
+
+.dishContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.dishLabelContainer {
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+	width: 100%;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	margin-left: 2px;
+	margin-right: 8px;
+}
+
+.dishLabelContainer:HOVER {
+	background-color: gray;
+	cursor: pointer;
+}
+
+input[type=button].dishEditButton {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+input[type=text] {
+	background: white;
+	margin: 2px;
+	padding: 2px;
+	vertical-align: bottom;
+	text-align: inherit;
+}
+
+input[type=button] {
+	border: none;
+	margin: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}

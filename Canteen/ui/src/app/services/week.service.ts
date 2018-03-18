@@ -10,11 +10,11 @@ export class WeekService {
 
     getWeeks(): Observable<Week[]> {
         return of( [
-            { weekNumber: 1, start: 'a', end: 'b' },
-            { weekNumber: 2, start: 'aaa', end: 'dgffb' },
-            { weekNumber: 3, start: 'dasda', end: 'gfbg' },
-            { weekNumber: 4, start: 'eqwea', end: 'gdfgb' },
-            { weekNumber: 5, start: 'eqwea', end: 'bcvbb' },
+            { yearNumber: 2018, weekNumber: 1, start: 'a', end: 'b' },
+            { yearNumber: 2018, weekNumber: 2, start: 'aaa', end: 'dgffb' },
+            { yearNumber: 2018, weekNumber: 3, start: 'dasda', end: 'gfbg' },
+            { yearNumber: 2018, weekNumber: 4, start: 'eqwea', end: 'gdfgb' },
+            { yearNumber: 2018, weekNumber: 5, start: 'eqwea', end: 'bcvbb' },
         ] );
     }
 }

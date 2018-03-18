@@ -1,0 +1,9 @@
+<div class="weekHeader">{{menu.yearNumber}} Week {{menu.weekNumber}}</div>
+<div class='componentContainer'>
+    <app-dish-selector></app-dish-selector>
+    <div *ngIf='menu'>
+        <div class='dailyMenuContainer'>
+            <app-daydetail [dayMenu]='dayMenu' [editMode]="true" *ngFor='let dayMenu of menu.dayMenus; first as isFirst' [class.first]='isFirst'></app-daydetail>
+        </div>
+    </div>
+</div>

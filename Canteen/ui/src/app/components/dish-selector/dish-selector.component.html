@@ -1,0 +1,21 @@
+<div class='componentContainer'>
+    <div class='controls'>
+        <input type='text' [(ngModel)]='searchTerm' (input)='updateSearch()'/>
+        <div class='buttonContainer'>
+            <input type='button' value='Add...'/>
+            <div class='spacer'></div>
+            <input type='button' value='Delete'/>
+        </div>
+    </div>
+    <div class='dishList'>
+        <div *ngFor="let dish of dishes">
+            <div class='dishContainer'>
+                <input class='dishEditButton' type='button' value='Edit...' (click)='onEditClick(dish)'/>
+                <div class='dishLabelContainer' draggable="true" (dragstart)='onDragStart($event, dish)'>
+                    <div>{{dish.name}}</div>
+                    <div>{{dish.englishName}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
