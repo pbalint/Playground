@@ -1,11 +1,11 @@
-<div class='dailyMenuContainer' *ngIf='dayMenu' (dragover)='onDragOver($event)'>
-    <div class='dailyMenuHeader' (drop)='onDrop($event)'>{{dayMenu.date}}</div>
+<div class='dailyMenuContainer' *ngIf='dayMenu'>
+    <div class='dailyMenuHeader' (drop)='onDrop($event)' (dragover)='onDragOver($event)'>{{dayMenu.date}}</div>
     <div class='dailyMenuDishContainer'>
         <div *ngFor='let dishType of dishTypes'>
             <div class="dishTypeContainer">
-                <div class="dishType" (drop)='onDrop($event)'>{{dishType}}</div>
+                <div class="dishType">{{dishType}}</div>
             </div>
-            <div class='dish' *ngFor='let dish of dayMenu.dishes.get(dishType)' (drop)='onDrop($event, dishType, dish)'>
+            <div class='dish' *ngFor='let dish of dayMenu.dishes.get(dishType)' (drop)='onDrop($event, dishType, dish)' (dragover)='onDragOver($event)'>
                 <div class='dishName'>{{dish.name}}</div>
                 <div class='dishPrice'>{{dish.price}} Ft.-</div>
                 <img class='dishPicture' src='{{dish.imageUrl}}'>

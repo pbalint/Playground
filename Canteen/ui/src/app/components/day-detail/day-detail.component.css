@@ -25,6 +25,7 @@
     padding: 4px;
     display: flex;
     flex-flow: row;
+	position: relative;
 }
 
 .dish:HOVER {
