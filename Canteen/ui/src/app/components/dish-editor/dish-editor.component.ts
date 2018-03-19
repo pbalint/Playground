@@ -1,4 +1,5 @@
 import { Dish } from '../../domain/dish';
+import { DialogService } from '../../services/dialog.service';
 import { Component, OnInit, Input, OnDestroy, EventEmitter, Output } from '@angular/core';
 
 @Component( {
@@ -10,11 +11,16 @@ export class DishEditorComponent implements OnInit, OnDestroy {
     @Input()
     dish: Dish;
 
-    constructor() { }
+    constructor( private dialogService: DialogService ) { }
 
     ngOnInit() {
     }
 
     ngOnDestroy() {
+        console.log('ondestroy!');
+    }
+
+    public closeDialog(): void {
+        this.dialogService.closeDialog();
     }
 }

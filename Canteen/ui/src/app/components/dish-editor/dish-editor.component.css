@@ -9,10 +9,16 @@
     background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
+.modalContent {
+	display: flex;
+	flex-flow: column;
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
+}
+
+.modalContent input {
+	margin-bottom: 10px;
 }

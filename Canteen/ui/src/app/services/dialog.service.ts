@@ -14,4 +14,8 @@ export class DialogService {
     public openDialog<T>( componentType: Type<T>, parameterSetter: (dialog: T) => void ) {
         this.dialogHost.openDialog( componentType, parameterSetter );
     }
+
+    public closeDialog(): void {
+        this.dialogHost.closeDialog();
+    }
 }

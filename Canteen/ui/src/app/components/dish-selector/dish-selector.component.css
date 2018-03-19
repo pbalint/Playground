@@ -1,20 +1,19 @@
 .componentContainer {
 	display: flex;
-	flex-direction: column;
+	flex-flow: column;
 	width: 300px;
 	height: 100%;
 }
 
 .controls {
 	display: flex;
-	flex-direction: column;
-	flex-order: row;
+	flex-flow: column;
 }
 
 .buttonContainer {
 	display: flex;
 	height: 50px;
-	flex-direction: row;
+	flex-flow: row;
 	margin-bottom: 4px;
 }
 
@@ -30,12 +29,12 @@
 
 .dishContainer {
 	display: flex;
-	flex-direction: row;
+	flex-flow: row;
 }
 
 .dishLabelContainer {
 	display: flex;
-	flex-direction: column;
+	flex-flow: column;
 	text-align: right;
 	width: 100%;
 	margin-top: 2px;

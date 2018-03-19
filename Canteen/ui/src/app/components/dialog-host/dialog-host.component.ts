@@ -1,6 +1,6 @@
 import { DialogHostDirective } from '../../directives/dialog-host.directive';
 import { DialogService } from '../../services/dialog.service';
-import { Component, Input, OnInit, ViewChild, ComponentFactoryResolver, OnDestroy, Type } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ComponentFactoryResolver, OnDestroy, Type, ViewContainerRef } from '@angular/core';
 
 @Component( {
     selector: 'app-dialog-host',
@@ -8,7 +8,7 @@ import { Component, Input, OnInit, ViewChild, ComponentFactoryResolver, OnDestro
     styleUrls: [ './dialog-host.component.css' ]
 } )
 export class DialogHostComponent implements OnInit, OnDestroy {
-    @ViewChild( DialogHostDirective ) adHost: DialogHostDirective;
+    @ViewChild( DialogHostDirective ) dialogHost: DialogHostDirective;
 
     constructor( private componentFactoryResolver: ComponentFactoryResolver,
                  private dialogService: DialogService ) { }
@@ -22,13 +22,16 @@ export class DialogHostComponent implements OnInit, OnDestroy {
 
     public openDialog<T>( componentType: Type<T>, parameterSetter: (dialog: T) => void ): void {
         const componentFactory = this.componentFactoryResolver.resolveComponentFactory( componentType );
-
-        const viewContainerRef = this.adHost.viewContainerRef;
+        const viewContainerRef = this.dialogHost.viewContainerRef;
         viewContainerRef.clear();
 
         const componentRef = viewContainerRef.createComponent( componentFactory );
         if (parameterSetter !== undefined && parameterSetter != null) {
             parameterSetter(componentRef.instance);
         }
+    }
+
+    public closeDialog(): void {
+        this.dialogHost.viewContainerRef.clear();
     }
 }
