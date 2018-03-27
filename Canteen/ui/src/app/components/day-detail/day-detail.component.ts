@@ -29,6 +29,8 @@ export class DayDetailComponent implements OnInit {
     }
 
     public onDrop( event: DragEvent, dishType: string, targetDish: Dish ): void {
+        event.preventDefault();
+        
         const dish: Dish = JSON.parse( event.dataTransfer.getData( 'dish' ) );
 
         let dishes: Dish[];
