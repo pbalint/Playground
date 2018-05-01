@@ -1,5 +1,6 @@
-CXX_FLAGS   := -I include -std=c++11
-LD_FLAGS    := -L lib -lprotobuf -lzmq -lpthread
+CXX_FLAGS   := -O2 -I include/protobuf -I include/zmq -std=c++11
+#CXX_FLAGS   := -g -O0 -I include/protobuf -I include/zmq -std=c++11
+LD_FLAGS    := -L lib/protobuf -L lib/zmq -lprotobuf -lzmq -lpthread
 
 BIN         := temp-sensor
 BIN_STATIC  := temp-sensor-static
@@ -7,20 +8,20 @@ BIN_STATIC  := temp-sensor-static
 SOURCES     := $(wildcard *.cpp)
 OBJS        := $(SOURCES:.cpp=.o)
 
-.PHONY: proto
+.PHONY:
 
 all: $(BIN_STATIC)
 
-$(BIN): proto $(OBJS)
-	$(CXX) -o $(BIN) obj/*.o obj/proto/*.o $(LD_FLAGS) 
+protos:
+	make -C proto
+
+$(BIN): protos $(OBJS)
+	$(CXX) -o $(BIN) obj/*.o proto/*.o $(LD_FLAGS) 
 	strip $(BIN)
 
-$(BIN_STATIC): proto $(OBJS)
-	$(CXX) -o $(BIN_STATIC) obj/*.o obj/proto/*.o $(LD_FLAGS) -static
+$(BIN_STATIC): protos $(OBJS)
+	$(CXX) -o $(BIN_STATIC) obj/*.o proto/*.o $(LD_FLAGS) -static
 	strip $(BIN_STATIC)
-
-proto:
-	make -C proto
 
 clean:
 	make -C proto clean

@@ -1,24 +1,19 @@
-CXX_FLAGS += -I../include -std=c++11
+CXX_FLAGS += -I ../include/protobuf -std=c++11
 
-CPP_DIR         := cpp
-JAVA_DIR        := java
-OBJ_DIR         := ../obj/proto
-DIRS            := ${CPP_DIR} ${JAVA_DIR} ${OBJ_DIR}
-PROTO_OBJS      := $(addprefix ${OBJ_DIR}/, $(patsubst %.proto,%.pb.o,$(wildcard *.proto)))
+PROTOS         := $(wildcard *.proto)
+PROTO_OBJS     := $(PROTOS:.proto=.pb.o)
 
-.PRECIOUS: ${CPP_DIR}/%.pb.cc 
+all: $(PROTO_OBJS)
 
-all: ${DIRS} $(PROTO_OBJS)
+clean: 
+	rm -f *.pb.o
+	rm -f *.pb.h
+	rm -f *.pb.cc
+	rm -rf com
 
-${DIRS}:
-	mkdir -p ${DIRS}
-
-clean:
-	rm -rf ${DIRS}
-
-${OBJ_DIR}/%.pb.o: ${CPP_DIR}/%.pb.cc
+%.pb.o: %.pb.cc
 	$(CXX) $(CXX_FLAGS) -c $< -o $@
 
-${CPP_DIR}/%.pb.cc: %.proto
-	./protoc --cpp_out=${CPP_DIR} $<
-	./protoc --java_out=${JAVA_DIR} $<
+%.pb.cc: %.proto
+	LD_LIBRARY_PATH=. && ./protoc --cpp_out=. $<
+	LD_LIBRARY_PATH=. && ./protoc --java_out=. $<

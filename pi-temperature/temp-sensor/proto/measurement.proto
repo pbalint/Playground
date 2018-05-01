@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package messages;
+
+option java_package = "com.pb.measurement";
+option java_outer_classname = "MeasurementMessage";
+
+message Measurement {
+    int64  timeStamp = 1;
+    int32  input     = 2;
+    double value     = 3;
+}
