@@ -17,12 +17,14 @@ class MeasurementWorker implements Runnable {
     private volatile boolean     running = true;
     private String               dataEndpoint;
     private Deque< Measurement > measurements;
+    private int                  itemCount;
     private int                  maxItemCount;
 
     public MeasurementWorker( String dataEndpoint, Deque< Measurement > measurements, int maxItemCount ) {
         this.dataEndpoint = dataEndpoint;
         this.measurements = measurements;
         this.maxItemCount = maxItemCount;
+        this.itemCount = measurements.size();
     }
 
     @Override
@@ -32,17 +34,16 @@ class MeasurementWorker implements Runnable {
         socket.connect( dataEndpoint );
         socket.subscribe( "" );
 
-        int size = 0;
         try {
             while ( running ) {
                 Measurement measurement = Measurement.parseFrom( socket.recv() );
                 synchronized ( measurements ) {
-                    if ( size >= maxItemCount ) {
+                    if ( itemCount >= maxItemCount ) {
                         measurements.removeFirst();
-                        size--;
+                        itemCount--;
                     }
                     measurements.add( measurement );
-                    size++;
+                    itemCount++;
                 }
             }
         }
@@ -61,7 +62,8 @@ class MeasurementWorker implements Runnable {
         return measurements;
     }
 
-    public void setMeasurements(Deque<Measurement> measurements) {
+    public void setMeasurements( Deque<Measurement> measurements ) {
         this.measurements = measurements;
+        this.itemCount = measurements.size();
     }
 }
