@@ -51,6 +51,7 @@
     <Reference Include="System.Net.Http" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Doodle\Domain\Config.cs" />
     <Compile Include="Doodle\Domain\PollResponse.cs" />
     <Compile Include="Doodle\DoodleClient.cs" />
     <Compile Include="Program.cs" />

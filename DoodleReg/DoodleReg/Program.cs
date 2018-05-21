@@ -13,6 +13,7 @@ namespace DoodleReg
 
         private static readonly Regex DOODLE_POLL_REGEXP = new Regex(@"doodle.com/poll/([a-z0-9]+)");
         private static DoodleClient doodle_client = new DoodleClient();
+        private static Configuration config = Configuration.loadOrGetDefault();
 
         public string GetPollId( string text )
         {
@@ -46,7 +47,7 @@ namespace DoodleReg
             {
                 int[] votes = new int[ poll.Options.Length ];
                 votes[ vote_index ] = 1;
-                VoteRequest vote_request = new VoteRequest( "Pámer Bálint", votes, poll.OptionsHash );
+                VoteRequest vote_request = new VoteRequest( config.UserNameToRegister, votes, poll.OptionsHash );
                 VoteResponse vote_response = doodle_client.Vote( poll_id, vote_request );
             }
         }
