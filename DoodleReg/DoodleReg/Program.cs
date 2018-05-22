@@ -2,6 +2,7 @@
 using DoodleReg.Doodle.Domain;
 using log4net;
 using Microsoft.Office.Interop.Outlook;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
@@ -9,21 +10,24 @@ namespace DoodleReg
 {
     class Program
     {
-        private static readonly ILog LOG = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog LOG = LogManager.GetLogger( MethodBase.GetCurrentMethod().DeclaringType );
 
-        private static readonly Regex DOODLE_POLL_REGEXP = new Regex(@"doodle.com/poll/([a-z0-9]+)");
+        private static readonly Regex DOODLE_POLL_REGEXP = new Regex( @"doodle.com/poll/([a-z0-9]+)" );
         private static DoodleClient doodle_client = new DoodleClient();
         private static Configuration config = Configuration.loadOrGetDefault();
 
-        public string GetPollId( string text )
+        public string[] GetPollIds( string text )
         {
-            Match match = DOODLE_POLL_REGEXP.Match(text);
-            string poll_id = null;
-            if ( match.Success )
+            MatchCollection matches = DOODLE_POLL_REGEXP.Matches( text );
+            List< string > poll_ids = new List< string >();
+            foreach ( Match match in matches )
             {
-                poll_id = match.Groups[ 1 ].Value;
+                if ( match.Success )
+                {
+                    poll_ids.Add( match.Groups[ 1 ].Value );
+                }
             }
-            return poll_id;
+            return poll_ids.ToArray();
         }
 
         public void VoteForPoll( string poll_id )
@@ -68,8 +72,8 @@ namespace DoodleReg
             while ( msg != null && msg.UnRead )
             {
                 LOG.InfoFormat( "Checking email: {0}", msg.Subject );
-                string poll_id = GetPollId( msg.Body );
-                if ( poll_id != null )
+                string[] poll_ids = GetPollIds( msg.Body );
+                foreach ( string poll_id in poll_ids )
                 {
                     LOG.InfoFormat( "Found poll with id: {0}", poll_id );
                     VoteForPoll( poll_id );
