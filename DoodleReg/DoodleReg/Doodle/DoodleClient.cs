@@ -10,7 +10,7 @@ namespace DoodleReg.Doodle
 {
     public class DoodleClient
     {
-        private static readonly ILog LOG = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog LOG = LogManager.GetLogger( MethodBase.GetCurrentMethod().DeclaringType );
 
         private static readonly string DOODLE_URL = "https://doodle.com/api/v2.0/polls/";
         private static readonly string VOTE_ENDPOINT = "/participants";
