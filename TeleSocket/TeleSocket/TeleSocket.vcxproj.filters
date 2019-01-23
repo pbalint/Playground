@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DataTransferThread.cpp" />
+    <ClCompile Include="Socket.cpp" />
+    <ClCompile Include="TeleSocket.cpp" />
+    <ClCompile Include="Thread.cpp" />
+    <ClCompile Include="Util.cpp" />
+    <ClCompile Include="Connection\ConnectConnectConnection.cpp">
+      <Filter>Source files\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection\ConnectConnectToServerConnection.cpp">
+      <Filter>Source files\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection\Connection.cpp">
+      <Filter>Source files\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection\ConnectListenConnection.cpp">
+      <Filter>Source files\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection\ListenConnectConnection.cpp">
+      <Filter>Source files\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection\ListenConnectToServerConnection.cpp">
+      <Filter>Source files\Connection</Filter>
+    </ClCompile>
+    <ClCompile Include="Connection\ListenListenConnection.cpp">
+      <Filter>Source files\Connection</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataTransferThread.h" />
+    <ClInclude Include="Events.h" />
+    <ClInclude Include="Socket.h" />
+    <ClInclude Include="Thread.h" />
+    <ClInclude Include="Util.h" />
+    <ClInclude Include="Connection\ConnectConnectConnection.h">
+      <Filter>Header files\Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\Connection.h">
+      <Filter>Header files\Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\ConnectListenConnection.h">
+      <Filter>Header files\Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\ListenConnectConnection.h">
+      <Filter>Header files\Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\ListenConnectToServerConnection.h">
+      <Filter>Header files\Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\ListenListenConnection.h">
+      <Filter>Header files\Connection</Filter>
+    </ClInclude>
+    <ClInclude Include="Connection\ConnectConnectToServerConnection.h">
+      <Filter>Header files\Connection</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{272bdf9f-11ad-4463-bfa8-fcf56f91ede6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{81c2c956-c404-4509-9940-7991294c7c64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Connection">
+      <UniqueIdentifier>{2c68078e-87af-4405-97b1-08011eb5a0e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\Connection">
+      <UniqueIdentifier>{8288626d-0048-4916-95c0-511864137ab8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

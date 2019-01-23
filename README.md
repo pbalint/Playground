@@ -12,5 +12,6 @@ My various hobby projects
 <strong>PMCFiller</strong>: Automatically fills EPAM timesheet (from 2011) :-)<BR/>
 <strong>Steam</strong>: Lists steam api endpoints<BR/>
 <strong>SVNUploader</strong>: Commits somewhere on every execution (used for making sure my father's PC is still working)<BR/>
+<strong>TeleSocket</strong>: PoC for forwarding connections through an arbitary client/server connection chain<BR/>
 <strong>WorkingHours</strong>: C# desktop app to log every logon/logoff/lock/unlock event = track time spent in front of pc<BR/>
 <strong>ZZChecker</strong>: saves webpage on every execution<BR/>

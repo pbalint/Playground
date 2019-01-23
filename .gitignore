@@ -1,5 +1,4 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
-
-/Extplorer/Extplorer/bin
+﻿/Extplorer/Extplorer/bin
+/Extplorer/Extplorer/obj/Debug
+/Extplorer/Extplorer/obj/Release
+*/.settings/
