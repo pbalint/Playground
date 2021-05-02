@@ -15,3 +15,4 @@ My various hobby projects
 <strong>TeleSocket</strong>: PoC for forwarding connections through an arbitary client/server connection chain<BR/>
 <strong>WorkingHours</strong>: C# desktop app to log every logon/logoff/lock/unlock event = track time spent in front of pc<BR/>
 <strong>ZZChecker</strong>: saves webpage on every execution<BR/>
+<strong>generate_certs.sh</strong>: Bash script for generating a cert signed with a generated root authority<BR/>
