@@ -16,3 +16,4 @@ My various hobby projects
 <strong>WorkingHours</strong>: C# desktop app to log every logon/logoff/lock/unlock event = track time spent in front of pc<BR/>
 <strong>ZZChecker</strong>: saves webpage on every execution<BR/>
 <strong>generate_certs.sh</strong>: Bash script for generating a cert signed with a generated root authority<BR/>
+<strong>Arty</strong>: a small example project for parsing maven artifact information from mavenrepository.org<BR/>
