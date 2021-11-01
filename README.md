@@ -17,3 +17,4 @@ My various hobby projects
 <strong>ZZChecker</strong>: saves webpage on every execution<BR/>
 <strong>generate_certs.sh</strong>: Bash script for generating a cert signed with a generated root authority<BR/>
 <strong>Arty</strong>: a small example project for parsing maven artifact information from mavenrepository.org<BR/>
+<strong>pcrm</strong>: Program for pulling recipes from https://www.pcrm.org/good-nutrition/plant-based-diets/recipes into an .xls file
