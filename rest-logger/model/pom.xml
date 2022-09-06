@@ -16,7 +16,7 @@
 
 	<properties>
 		<jpa.api.version>1.0.0.Final</jpa.api.version>
-		<spring.data.jpa.version>1.11.0.RELEASE</spring.data.jpa.version>
+		<spring.data.jpa.version>1.11.23.RELEASE</spring.data.jpa.version>
 	</properties>
 	
 	<dependencies>
