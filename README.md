@@ -8,7 +8,7 @@ My various hobby projects
 <strong>HTTPStressTest</strong>: C# program to repeatedly issue http requests (Once upon a time, a client had an unknown number of broken servers behind a load balancer...)<BR/>
 <strong>InputPlayback</strong>: C# program for playing back keyboard/mouse input<BR/>
 <strong>JLogviewer</strong>: Abandoned log viewer in java for a logfile with custom format (grouping logs from multiple threads)<BR/>
-<strong>pi-temperature</strong>: Projects for reading ambient temperature via an LM92 IC on a raspberry py (C++ project for writing measurements to a .CSV file and a Java (Spring Boot + Freemarker + highcharts) project for showing the file on a chart)<BR/>
+<strong>pi-temperature</strong>: Projects for reading ambient temperature via an LM92 IC on a raspberry pi (C++ project for writing measurements to a .CSV file and a Java (Spring Boot + Freemarker + highcharts) project for showing the file on a chart)<BR/>
 <strong>PMCFiller</strong>: Automatically fills EPAM timesheet (from 2011) :-)<BR/>
 <strong>Steam</strong>: Lists steam api endpoints<BR/>
 <strong>SVNUploader</strong>: Commits somewhere on every execution (used for making sure my father's PC is still working)<BR/>
