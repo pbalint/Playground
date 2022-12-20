@@ -18,3 +18,4 @@ My various hobby projects
 <strong>generate_certs.sh</strong>: Bash script for generating a cert signed with a generated root authority<BR/>
 <strong>Arty</strong>: a small example project for parsing maven artifact information from mavenrepository.org<BR/>
 <strong>pcrm</strong>: Program for pulling recipes from https://www.pcrm.org/good-nutrition/plant-based-diets/recipes into an .xls file
+<strong>ServiceDeleter</strong>: Small C++ app to delete windows update services (to be added as a startup task, because some of them get recreated apparently)
