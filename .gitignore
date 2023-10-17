@@ -1,4 +1,7 @@
 ﻿/Extplorer/Extplorer/bin
 /Extplorer/Extplorer/obj/Debug
 /Extplorer/Extplorer/obj/Release
-*/.settings/
+**/.settings/
+**/target/
+.classpath
+.project

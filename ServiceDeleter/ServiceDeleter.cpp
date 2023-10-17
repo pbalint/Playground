@@ -60,6 +60,8 @@ int APIENTRY wWinMain( _In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstanc
     delete_key( L"SYSTEM\\CurrentControlSet\\Services\\UsoSvc" );
     delete_key( L"SYSTEM\\CurrentControlSet\\Services\\wuauserv" );
     delete_key( L"SYSTEM\\CurrentControlSet\\Services\\WaaSMedicSvc" );
+    delete_key( L"SYSTEM\\CurrentControlSet\\Services\\edgeupdate" );
+    delete_key( L"SYSTEM\\CurrentControlSet\\Services\\edgeupdatem" );
     return 0;
 }
 
