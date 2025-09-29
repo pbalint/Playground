@@ -4,7 +4,8 @@ set -e
 #set -x
 
 #OPENSSL_CNF_PATH=/etc/pki/tls/openssl.cnf
-OPENSSL_CNF_PATH=/etc/ssl/openssl.cnf
+#OPENSSL_CNF_PATH=/etc/ssl/openssl.cnf
+OPENSSL_CNF_PATH=/usr/ssl/openssl.cnf # msys2
 ROOT_CA=rootCA
 CERT_HOST=htpc
 PASSPHRASE=pw123423ewe
@@ -14,10 +15,10 @@ openssl req -x509 -new -nodes -extensions v3_ca -subj "/C=HU/O=PB/CN=${ROOT_CA}"
 
 openssl genrsa -out ${CERT_HOST}.key 2048
 openssl req -new -sha256 -key ${CERT_HOST}.key -subj "/C=HU/O=PB/CN=${CERT_HOST}" -reqexts SAN -extensions SAN \
-	-config <(cat ${OPENSSL_CNF_PATH} <(printf "[SAN]\nsubjectAltName=DNS:${CERT_HOST},DNS:localhost")) \
+	-config <(cat ${OPENSSL_CNF_PATH} <(printf "[SAN]\nsubjectAltName=DNS:${CERT_HOST},DNS:localhost,IP:127.0.0.1")) \
 	-out ${CERT_HOST}.csr
 openssl x509 -req -in ${CERT_HOST}.csr -extensions SAN \
-	-extfile <(cat ${OPENSSL_CNF_PATH} <(printf "[SAN]\nsubjectAltName=DNS:${CERT_HOST},DNS:localhost")) \
+	-extfile <(cat ${OPENSSL_CNF_PATH} <(printf "[SAN]\nsubjectAltName=DNS:${CERT_HOST},DNS:localhost,IP:127.0.0.1")) \
 	-CA ${ROOT_CA}.crt -passin pass:${PASSPHRASE} -CAkey ${ROOT_CA}.key -CAcreateserial -out ${CERT_HOST}.crt -days 365 -sha256
 
 #crt -> pfx
